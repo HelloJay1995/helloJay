@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.hello.jay.mapper.UserMapperExt" >
+  <!-- 扩展自动生成或自定义的SQl语句写在此文件中 -->
+  <select id="listUserByMap" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where 1 = 1
+    <if test="isDeleted != null and isDeleted != ''">
+      and is_deleted = #{isDeleted}
+    </if>
+  </select>
+
+  <update id="updateAllNotDeleted">
+    update user set is_deleted = 0 where is_deleted = 1
+  </update>
+
+</mapper>
