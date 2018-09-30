@@ -56,7 +56,7 @@ public class RogueService {
                     break;
                 }
 
-                logger.debug(Thread.currentThread().getName());
+                System.out.println(Thread.currentThread().getName());
                 if (!isExceedingCancelDeadline("21:59:31")) {
                     sleep(1000 * 30);
                     continue;
@@ -110,7 +110,7 @@ public class RogueService {
                 Random random = new Random();
                 index = random.nextInt(users.size());
             }
-            logger.debug("index:" + index);
+            System.out.println("index:" + index);
             return users.get(index);
         }
         return null;
@@ -151,7 +151,7 @@ public class RogueService {
                 while (true) {
                     try {
 
-                        logger.debug("loginThread:" + Thread.currentThread().getName());
+                        System.out.println("loginThread:" + Thread.currentThread().getName());
                         if (!isExceedingCancelDeadline("21:55:00")) {
                             sleep(1000 * 60);
                             continue;
