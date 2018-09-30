@@ -56,11 +56,11 @@ public class RogueService {
                     break;
                 }
 
-                logger.warn(Thread.currentThread().getName());
-//                if (!isExceedingCancelDeadline("21:59:01")) {
-//                    sleep(1000 * 60);
-//                    continue;
-//                }
+                logger.debug(Thread.currentThread().getName());
+                if (!isExceedingCancelDeadline("21:59:31")) {
+                    sleep(1000 * 30);
+                    continue;
+                }
 
                 String seatId = null;
                 for (SeatResponse seat : RequestUtil.fetchAllSeats()) {
@@ -110,7 +110,7 @@ public class RogueService {
                 Random random = new Random();
                 index = random.nextInt(users.size());
             }
-            logger.warn("index:" + index);
+            logger.debug("index:" + index);
             return users.get(index);
         }
         return null;
@@ -151,7 +151,7 @@ public class RogueService {
                 while (true) {
                     try {
 
-                        logger.warn("loginThread:" + Thread.currentThread().getName());
+                        logger.debug("loginThread:" + Thread.currentThread().getName());
                         if (!isExceedingCancelDeadline("21:55:00")) {
                             sleep(1000 * 60);
                             continue;
