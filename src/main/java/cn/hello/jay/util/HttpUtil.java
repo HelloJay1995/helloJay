@@ -307,18 +307,4 @@ public class HttpUtil {
         return out.toString();
     }
 
-//    public static void main(String[] args) throws IOException {
-//        String url = "http://mob.huanghuai.edu.cn/huanghuai/booksLogin";
-//        Map<String, String> params = new HashMap<>();
-//        params.put("jszh", "1729200101");
-//        params.put("password", "fae1f94c506115eb3d565c1eef081196");
-//        Map<String, String> headers = new HashMap<>();
-//        headers.put("cache", "60");
-//        headers.put("Host", "mob.huanghuai.edu.cn");
-//        headers.put("User-Agent", "okhttp/3.9.0");
-//        headers.put("Cache-Control", "max-age=2592000");
-//        headers.put("Content-Type", "application/x-www-form-urlencoded");
-//        String s = postForm(url, params, headers);
-//        System.out.println(s);
-//    }
 }

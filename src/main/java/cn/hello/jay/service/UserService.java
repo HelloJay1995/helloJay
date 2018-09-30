@@ -1,10 +1,11 @@
 package cn.hello.jay.service;
 
-import cn.hello.jay.util.MD5Util;
-import cn.hello.jay.util.RequestUtil;
 import cn.hello.jay.mapper.UserMapperExt;
+import cn.hello.jay.model.po.Appointment;
 import cn.hello.jay.model.po.User;
 import cn.hello.jay.model.vo.LoginResponse;
+import cn.hello.jay.util.MD5Util;
+import cn.hello.jay.util.RequestUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -44,6 +45,17 @@ public class UserService {
     public List<User> listEffectiveUser() {
         Map<String, Object> params = new HashMap<>();
         params.put("isDeleted", 0);
+        return userMapper.listUserByMap(params);
+    }
+
+    /**
+     * 查询被删除用户
+     *
+     * @return
+     */
+    public List<User> listSusUser() {
+        Map<String, Object> params = new HashMap<>();
+        params.put("isDeleted", 1);
         return userMapper.listUserByMap(params);
     }
 }

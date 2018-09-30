@@ -50,21 +50,15 @@ public class RogueService {
 
     private void realMan() {
         User user = queryUser();
-        if (user == null) {
-            return;
-        }
         while (true) {
             try {
+                if (user == null) {
+                    break;
+                }
 
                 logger.warn(Thread.currentThread().getName());
 //                if (!isExceedingCancelDeadline("21:59:01")) {
 //                    sleep(1000 * 60);
-//                    continue;
-//                }
-
-//                ConfirmResponse confirmResponseStart = RequestUtil.confirmSeat(user.getJszh());
-//                if (confirmResponseStart != null && confirmResponseStart.isStatus()) {
-//                    deleteUser(user);
 //                    continue;
 //                }
 
@@ -96,7 +90,7 @@ public class RogueService {
                     user = queryUser();
                     continue;
                 }
-
+                System.out.println();
             } catch (Exception e) {
                 e.printStackTrace();
             }

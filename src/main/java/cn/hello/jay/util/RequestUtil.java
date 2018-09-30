@@ -151,8 +151,4 @@ public class RequestUtil {
         return confirmResponse;
     }
 
-
-//    public static void main(String[] args) {
-//        confirmSeat("YKT1729200102");
-//    }
 }

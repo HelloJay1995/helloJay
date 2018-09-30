@@ -3,7 +3,6 @@ package cn.hello.jay.controller;
 import cn.hello.jay.model.po.User;
 import cn.hello.jay.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +26,6 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value = "success", method = RequestMethod.GET)
     public List<User> listAllUser() {
-        return userService.listEffectiveUser();
+        return userService.listSusUser();
     }
 }
