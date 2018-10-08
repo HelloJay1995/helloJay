@@ -57,7 +57,7 @@ public class RogueService {
                 }
 
                 System.out.println(Thread.currentThread().getName());
-                if (!isExceedingCancelDeadline("21:59:31")) {
+                if (!isExceedingCancelDeadline("21:59:29")) {
                     sleep(1000 * 30);
                     continue;
                 }
@@ -78,8 +78,12 @@ public class RogueService {
                     continue;
                 }
 
-                SelectResponse selectResponse = RequestUtil.selectSeat(user.getJszh(), seatId);
-                if (selectResponse != null && selectResponse.isStatus()) {
+                SelectResponse selectResponse;
+                do {
+                    selectResponse = RequestUtil.selectSeat(user.getJszh(), seatId);
+                } while (selectResponse == null);
+
+                if (selectResponse.isStatus()) {
                     deleteUser(user);
                     user = queryUser();
                     continue;
