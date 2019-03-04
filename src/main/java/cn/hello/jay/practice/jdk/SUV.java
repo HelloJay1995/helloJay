@@ -1,5 +1,5 @@
 /**
- * Copyright (C), 2011-2019, 微贷网.
+ *
  */
 package cn.hello.jay.practice.jdk;
 
