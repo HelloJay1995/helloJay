@@ -1,5 +1,8 @@
 package cn.hello.jay;
 
+import com.weidai.goods.enums.GoodsEnum;
+import com.weidai.toolbox.back.notice.vo.request.dingtalk.TextMessage;
+import com.weidai.toolbox.facade.NoticeClient;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -24,7 +27,7 @@ public class Application {
     private static Logger logger = Logger.getLogger(Application.class);
 
     @Bean
-    @ConfigurationProperties(prefix="spring.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
         return new org.apache.tomcat.jdbc.pool.DataSource();
     }
@@ -54,6 +57,10 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
         logger.info("SpringBoot Start Success");
+
+        NoticeClient.sendMessage(new TextMessage("1", "2"));
+
+        String xplan = GoodsEnum.GoodsType.X_PLAN.getType();
     }
 
 }
