@@ -2336,7 +2336,7 @@ Resolver.prototype.resolve = function (spec, arg1, arg2, arg3) {
       }
       else {
         var obj = {
-          useJQuery: false,  // TODO
+          useJQuery: false,  
           url: item.root,
           method: 'get',
           headers: {
@@ -2685,7 +2685,7 @@ Resolver.prototype.resolveAllOf = function(spec, obj, depth) {
                 output['x-resolved-from'].push(source);
               }
               else {
-                // TODO: need to merge this property
+                : need to merge this property
                 // console.log('what to do with ' + part)
               }
             }
@@ -3501,7 +3501,7 @@ SwaggerSpecConverter.prototype.responseMessages = function(operation, existingOp
   // build default response from the operation (1.x)
   var defaultResponse = {};
   this.dataType(existingOperation, defaultResponse);
-  // TODO: look into the real problem of rendering responses in swagger-ui
+  : look into the real problem of rendering responses in swagger-ui
   // ....should reponseType have an implicit schema?
   if(!defaultResponse.schema && defaultResponse.type) {
     defaultResponse = {schema: defaultResponse};
@@ -3537,7 +3537,7 @@ SwaggerSpecConverter.prototype.responseMessages = function(operation, existingOp
 };
 
 SwaggerSpecConverter.prototype.authorizations = function(obj) {
-  // TODO
+  
   if(!_.isObject(obj)) {
     return;
   }
@@ -6589,7 +6589,7 @@ process.binding = function (name) {
     throw new Error('process.binding is not supported');
 };
 
-// TODO(shtylman)
+(shtylman)
 process.cwd = function () { return '/' };
 process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
@@ -10649,7 +10649,7 @@ jQuery.extend({
 		data_user.remove( elem, name );
 	},
 
-	// TODO: Now that all calls to _data and _removeData have been replaced
+	: Now that all calls to _data and _removeData have been replaced
 	// with direct calls to data_priv methods, these can be deprecated.
 	_data: function( elem, name, data ) {
 		return data_priv.access( elem, name, data );
@@ -17660,7 +17660,7 @@ function readDoubleQuotedScalar(state, nodeIndent) {
       if (is_EOL(ch)) {
         skipSeparationSpace(state, false, nodeIndent);
 
-        // TODO: rework to inline fn with no type cast?
+        : rework to inline fn with no type cast?
       } else if (ch < 256 && simpleEscapeCheck[ch]) {
         state.result += simpleEscapeMap[ch];
         state.position++;
@@ -19019,7 +19019,7 @@ function Type(tag, options) {
     }
   });
 
-  // TODO: Add tag format check.
+  : Add tag format check.
   this.tag          = tag;
   this.kind         = options['kind']         || null;
   this.resolve      = options['resolve']      || function () { return true; };
@@ -30879,7 +30879,7 @@ module.exports = function(arr, fn, initial){
 
 'use strict';
 
-SwaggerUi.Views.ApiKeyButton = Backbone.View.extend({ // TODO: append this to global SwaggerUi
+SwaggerUi.Views.ApiKeyButton = Backbone.View.extend({ : append this to global SwaggerUi
 
   events:{
     'click #apikey_button' : 'toggleApiKeyContainer',
@@ -31254,7 +31254,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   },
 
   // Note: copied from CoffeeScript compiled file
-  // TODO: redactor
+  : redactor
   render: function() {
     var a, auth, auths, code, contentTypeModel, isMethodSubmissionSupported, k, key, l, len, len1, len2, len3, len4, m, modelAuths, n, o, p, param, q, ref, ref1, ref2, ref3, ref4, ref5, responseContentTypeView, responseSignatureView, schema, schemaObj, scopeIndex, signatureModel, statusCode, successResponse, type, v, value;
     isMethodSubmissionSupported = jQuery.inArray(this.model.method, this.model.supportedSubmitMethods()) >= 0;
@@ -31437,7 +31437,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   },
 
   // Note: copied from CoffeeScript compiled file
-  // TODO: redactor
+  : redactor
   submitOperation: function(e) {
     var error_free, form, isFileUpload, map, opts;
     if (e !== null) {
@@ -31635,7 +31635,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
 
   // Adapted from http://stackoverflow.com/a/2893259/454004
   // Note: directly ported from CoffeeScript
-  // TODO: Cleanup CoffeeScript artifacts
+  : Cleanup CoffeeScript artifacts
   formatXml: function(xml) {
     var contexp, fn, formatted, indent, l, lastType, len, lines, ln, pad, reg, transitions, wsexp;
     reg = /(>)(<)(\/*)/g;
