@@ -112,40 +112,40 @@ public class DoubleCheckTest {
         }
     }
 
-    public static void main(String[] args) {
-        if (args.length != 2) {
-            System.err.println("usage: java DoubleCheckFail" +
-                                       " <numThreads> <numSingletons>");
-        }
-        // read values from args
-        threadCount = 10;
-        singletonCount = 10;
-
-        // create arrays
-        threads = new Thread[threadCount];
-        singletons = new ObjectHolder[singletonCount];
-
-        // fill singleton array
-        for (int i = 0; i < singletonCount; ++i)
-            singletons[i] = new ObjectHolder();
-
-        // fill thread array
-        for (int i = 0; i < threadCount; ++i)
-            threads[i] = new Thread(new TestThread());
-
-        // start threads
-        for (int i = 0; i < threadCount; ++i)
-            threads[i].start();
-
-        // wait for threads to finish
-        for (int i = 0; i < threadCount; ++i) {
-            try {
-                System.out.println("waiting to join " + i);
-                threads[i].join();
-            } catch (InterruptedException ex) {
-                System.out.println("interrupted");
-            }
-        }
-        System.out.println("done");
-    }
+//    public static void main(String[] args) {
+//        if (args.length != 2) {
+//            System.err.println("usage: java DoubleCheckFail" +
+//                                       " <numThreads> <numSingletons>");
+//        }
+//        // read values from args
+//        threadCount = 10;
+//        singletonCount = 10;
+//
+//        // create arrays
+//        threads = new Thread[threadCount];
+//        singletons = new ObjectHolder[singletonCount];
+//
+//        // fill singleton array
+//        for (int i = 0; i < singletonCount; ++i)
+//            singletons[i] = new ObjectHolder();
+//
+//        // fill thread array
+//        for (int i = 0; i < threadCount; ++i)
+//            threads[i] = new Thread(new TestThread());
+//
+//        // start threads
+//        for (int i = 0; i < threadCount; ++i)
+//            threads[i].start();
+//
+//        // wait for threads to finish
+//        for (int i = 0; i < threadCount; ++i) {
+//            try {
+//                System.out.println("waiting to join " + i);
+//                threads[i].join();
+//            } catch (InterruptedException ex) {
+//                System.out.println("interrupted");
+//            }
+//        }
+//        System.out.println("done");
+//    }
 }

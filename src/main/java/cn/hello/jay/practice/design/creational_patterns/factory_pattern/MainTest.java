@@ -9,9 +9,9 @@ package cn.hello.jay.practice.design.creational_patterns.factory_pattern;
  */
 public class MainTest {
 
-    public static void main(String[] args) {
-        ShapeFactory.getInstance().getShape(ShapeFactory.RECTANGLE).draw();
-        ShapeFactory.getInstance().getShape(ShapeFactory.SQUARE).draw();
-        ShapeFactory.getInstance().getShape(ShapeFactory.CIRCLE).draw();
-    }
+//    public static void main(String[] args) {
+//        ShapeFactory.getInstance().getShape(ShapeFactory.RECTANGLE).draw();
+//        ShapeFactory.getInstance().getShape(ShapeFactory.SQUARE).draw();
+//        ShapeFactory.getInstance().getShape(ShapeFactory.CIRCLE).draw();
+//    }
 }
