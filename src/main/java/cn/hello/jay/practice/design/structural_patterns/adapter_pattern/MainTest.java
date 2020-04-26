@@ -8,7 +8,7 @@ package cn.hello.jay.practice.design.structural_patterns.adapter_pattern;
  * @Date 2019年02月26日
  */
 public class MainTest {
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        AudioPlayer audioPlayer = new AudioPlayer();
 //
 //        audioPlayer.play("mp3", "beyond the horizon.mp3");

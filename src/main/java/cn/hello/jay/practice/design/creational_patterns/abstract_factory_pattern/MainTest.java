@@ -9,7 +9,7 @@ package cn.hello.jay.practice.design.creational_patterns.abstract_factory_patter
  */
 public class MainTest {
 
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        AbstractFactory colorFactory = FactoryProducer.getFactory(AbstractFactory.COLORFACTORY);
 //        colorFactory.getColor(AbstractFactory.RED).fill();
 //        colorFactory.getColor(AbstractFactory.GREEN).fill();;

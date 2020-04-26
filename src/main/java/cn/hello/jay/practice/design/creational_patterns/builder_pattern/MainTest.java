@@ -9,7 +9,7 @@ package cn.hello.jay.practice.design.creational_patterns.builder_pattern;
  */
 public class MainTest {
 
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        Meal meal = new Meal.MealBuilder().prepareVegMeal().prepareNonVegMeal().show();
 //        meal.showItems();
 //        System.out.println("总价：" + meal.getCost());

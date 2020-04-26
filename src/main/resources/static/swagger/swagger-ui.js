@@ -31132,7 +31132,7 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
     }
 
     // Render the outer container for resources
-    $(this.el).html(Handlebars.templates.main(this.model));
+    $(this.el).html(Handlebars.templates.mainReplace(this.model));
 
     // Render each resource
 

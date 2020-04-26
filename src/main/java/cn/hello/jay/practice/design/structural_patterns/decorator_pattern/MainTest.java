@@ -6,7 +6,7 @@ package cn.hello.jay.practice.design.structural_patterns.decorator_pattern;
  */
 public class MainTest {
 
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        Shape circle = new Circle();
 //        circle.draw();
 //

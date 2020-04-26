@@ -5,7 +5,7 @@ package cn.hello.jay.practice.design.structural_patterns.facade_pattern;
  * @Date 2019年03月27日
  */
 public class MainTest {
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        ShapeMaker shapeMaker = new ShapeMaker();
 //        shapeMaker.drawCircle();
 //        shapeMaker.drawRectangle();

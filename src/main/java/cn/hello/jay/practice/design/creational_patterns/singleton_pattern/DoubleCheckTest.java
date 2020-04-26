@@ -112,7 +112,7 @@ public class DoubleCheckTest {
         }
     }
 
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        if (args.length != 2) {
 //            System.err.println("usage: java DoubleCheckFail" +
 //                                       " <numThreads> <numSingletons>");

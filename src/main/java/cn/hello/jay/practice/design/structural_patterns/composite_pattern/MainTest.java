@@ -6,7 +6,7 @@ package cn.hello.jay.practice.design.structural_patterns.composite_pattern;
  */
 public class MainTest {
 
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        Employee CEO = new Employee("John", "CEO", 30000);
 //
 //        Employee headSales = new Employee("Robert", "Head Sales", 20000);

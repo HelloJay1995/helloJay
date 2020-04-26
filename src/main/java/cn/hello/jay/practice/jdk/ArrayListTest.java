@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 public class ArrayListTest {
     private static final ExecutorService executorService = Executors.newFixedThreadPool(10000);
 
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        final List<String> list = new ArrayList<>();
 ////        final List<String> list = Collections.synchronizedList(new ArrayList<String>());
 //

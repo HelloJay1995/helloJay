@@ -11,6 +11,10 @@ public class Tiguan extends SUV{
 
     private String name = "tiguan";
 
+    public Tiguan(String name) {
+        super(name);
+    }
+
     public String getName() {
         return name;
     }

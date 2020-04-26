@@ -1,12 +1,12 @@
 package cn.hello.jay.service;
 
 import cn.hello.jay.mapper.UserMapperExt;
-import cn.hello.jay.model.po.Appointment;
 import cn.hello.jay.model.po.User;
 import cn.hello.jay.model.vo.LoginResponse;
 import cn.hello.jay.util.MD5Util;
 import cn.hello.jay.util.RequestUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -17,6 +17,19 @@ import java.util.Map;
 
 @Service
 public class UserService {
+
+//    @Autowired
+    private RogueService rogueService;
+
+//    @PostConstruct
+//    public void init(){
+//        rogueService.setUserService(this);
+//    }
+
+    @Autowired
+    public UserService(@Lazy RogueService rogueService) {
+        this.rogueService = rogueService;
+    }
 
     @Autowired
     private UserMapperExt userMapper;

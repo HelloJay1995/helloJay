@@ -7,7 +7,7 @@ package cn.hello.jay.practice.design.behavioral_patterns.chain_of_responsibility
  * @Date 2019年03月27日
  */
 public class MainTest {
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        AbstractLogger loggerChain = getChainOfLoggers();
 //        loggerChain.logMessage(AbstractLogger.INFO,
 //                "This is an information.");

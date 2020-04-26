@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class MainTest {
 
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        List<Person> persons = new ArrayList<>();
 //        persons.add(new Person("Robert", "Male", "Single"));
 //        persons.add(new Person("John", "Male", "Married"));

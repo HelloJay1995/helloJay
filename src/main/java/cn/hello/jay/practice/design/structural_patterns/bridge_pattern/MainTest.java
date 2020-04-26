@@ -9,7 +9,7 @@ package cn.hello.jay.practice.design.structural_patterns.bridge_pattern;
  */
 public class MainTest {
 
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        Circle greenCircle = new Circle(new GreenCircle(), 100, 100, 20);
 //        Circle redCircle = new Circle(new RedCircle(), 100, 100, 20);
 //        greenCircle.draw();

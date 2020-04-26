@@ -8,7 +8,7 @@ package cn.hello.jay.practice.design.creational_patterns.prototype_pattern;
  * @Date 2019年02月22日
  */
 public class MainTest {
-//    public static void main(String[] args) {
+//    public static void mainReplace(String[] args) {
 //        // 加载数据
 //        ShapeCache.loadCache();
 //        // 获取克隆实例

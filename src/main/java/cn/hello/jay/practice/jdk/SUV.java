@@ -10,6 +10,10 @@ package cn.hello.jay.practice.jdk;
 public class SUV extends Car {
     private String name = "suv";
 
+    public SUV(String name) {
+        super(name);
+    }
+
     @Override
     public String getName() {
         return name;
