@@ -1,4 +1,4 @@
-package cn.hello.jay.practice.leetcode;
+package cn.hello.jay.practice.leetcode.other;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

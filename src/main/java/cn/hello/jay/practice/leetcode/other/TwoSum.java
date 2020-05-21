@@ -1,4 +1,4 @@
-package cn.hello.jay.practice.leetcode;
+package cn.hello.jay.practice.leetcode.other;
 
 import com.alibaba.fastjson.JSON;
 

@@ -3,5 +3,7 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-autowire="byName">
 
-    <bean id="classTest" class="cn.hello.jay.practice.jdk.ClassTest"/>
+    <bean id="classTest" class="cn.hello.jay.practice.jdk.ClassTest">
+        <property name="args" value="11111"/>
+    </bean>
 </beans>
