@@ -22,17 +22,17 @@ public class CreateSql {
 //        String trustPlanStartTime = "2020-05-20 00:00:00";
 //        String trustPlanEndTime = "2021-10-20 23:59:59";
 
-        String trustPlanNo = "TSX20200509";
-        String startTime = "2020-05-09 00:00:00";
-        String endTime = "2020-05-10 23:59:59";
-        String trustPlanStartTime = "2020-06-10 00:00:00";
-        String trustPlanEndTime = "2021-11-10 23:59:59";
+        String trustPlanNo = "TSX20200528";
+        String startTime = "2020-05-28 00:00:00";
+        String endTime = "2020-05-30 23:59:59";
+        String trustPlanStartTime = "2020-06-20 00:00:00";
+        String trustPlanEndTime = "2021-11-20 23:59:59";
 
 
 
         String term = "18";
         String rate = "0.0225";
-        String repayDate = "10";
+        String repayDate = "20";
 
         BufferedReader br = new BufferedReader(new FileReader(new File(file)));
         String uid = br.readLine();

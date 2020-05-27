@@ -21,7 +21,7 @@ public class ConcurrentHashMapTest {
 //
 //        h ^= k.hashCode();
 //
-//        // Spread bits to regularize both segment and index locations,
+//        // Spread bits to regularize both segment and count locations,
 //        // using variant of single-word Wang/Jenkins hash.
 //        h += (h << 15) ^ 0xffffcd7d;
 //        h ^= (h >>> 10);

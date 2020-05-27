@@ -86,4 +86,12 @@ public class Main {
         }
         System.out.println(sb.toString());
     }
+
+    public static void main(String[] args) {
+        System.out.println(Integer.toBinaryString(-4));
+        System.out.println(Integer.toBinaryString(-4 >> 1));
+        System.out.println(-4 >> 1);
+        System.out.println(Integer.toBinaryString(-4 >>> 1));
+        System.out.println(-4 >>> 1);
+    }
 }

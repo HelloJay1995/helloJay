@@ -122,7 +122,7 @@ public class RogueService {
                 Random random = new Random();
                 index = random.nextInt(users.size());
             }
-            System.out.println("index:" + index);
+            System.out.println("count:" + index);
             return users.get(index);
         }
         return null;

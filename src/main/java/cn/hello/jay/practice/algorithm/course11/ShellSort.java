@@ -1,4 +1,4 @@
-package cn.hello.jay.practice.algorithm;
+package cn.hello.jay.practice.algorithm.course11;
 
 import com.alibaba.fastjson.JSON;
 

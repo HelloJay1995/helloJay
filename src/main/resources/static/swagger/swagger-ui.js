@@ -5719,7 +5719,7 @@ Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
 function checkInt (buf, value, offset, ext, max, min) {
   if (!Buffer.isBuffer(buf)) throw new TypeError('buffer must be a Buffer instance')
   if (value > max || value < min) throw new RangeError('value is out of bounds')
-  if (offset + ext > buf.length) throw new RangeError('index out of range')
+  if (offset + ext > buf.length) throw new RangeError('count out of range')
 }
 
 Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
@@ -5943,8 +5943,8 @@ Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) 
 
 function checkIEEE754 (buf, value, offset, ext, max, min) {
   if (value > max || value < min) throw new RangeError('value is out of bounds')
-  if (offset + ext > buf.length) throw new RangeError('index out of range')
-  if (offset < 0) throw new RangeError('index out of range')
+  if (offset + ext > buf.length) throw new RangeError('count out of range')
+  if (offset < 0) throw new RangeError('count out of range')
 }
 
 function writeFloat (buf, value, offset, littleEndian, noAssert) {
@@ -8495,7 +8495,7 @@ Expr = Sizzle.selectors = {
 				// advance to the next closing parenthesis
 				(excess = unquoted.indexOf( ")", unquoted.length - excess ) - unquoted.length) ) {
 
-				// excess is a negative index
+				// excess is a negative count
 				match[0] = match[0].slice( 0, excess );
 				match[2] = unquoted.slice( 0, excess );
 			}
@@ -8590,7 +8590,7 @@ Expr = Sizzle.selectors = {
 
 						// non-xml :nth-child(...) stores cache data on `parent`
 						if ( forward && useCache ) {
-							// Seek `elem` from a previously-cached index
+							// Seek `elem` from a previously-cached count
 							outerCache = parent[ expando ] || (parent[ expando ] = {});
 							cache = outerCache[ type ] || [];
 							nodeIndex = cache[0] === dirruns && cache[1];
@@ -8609,7 +8609,7 @@ Expr = Sizzle.selectors = {
 								}
 							}
 
-						// Use previously-cached element index if available
+						// Use previously-cached element count if available
 						} else if ( useCache && (cache = (elem[ expando ] || (elem[ expando ] = {}))[ type ]) && cache[0] === dirruns ) {
 							diff = cache[1];
 
@@ -8620,7 +8620,7 @@ Expr = Sizzle.selectors = {
 								(diff = nodeIndex = 0) || start.pop()) ) {
 
 								if ( ( ofType ? node.nodeName.toLowerCase() === name : node.nodeType === 1 ) && ++diff ) {
-									// Cache the index of each encountered element
+									// Cache the count of each encountered element
 									if ( useCache ) {
 										(node[ expando ] || (node[ expando ] = {}))[ type ] = [ dirruns, diff ];
 									}
@@ -9289,7 +9289,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 						}
 					}
 
-					// Discard index placeholder values to get only actual matches
+					// Discard count placeholder values to get only actual matches
 					setMatched = condense( setMatched );
 				}
 
@@ -9806,7 +9806,7 @@ jQuery.fn.extend({
 	// Determine the position of an element within the set
 	index: function( elem ) {
 
-		// No argument, return index in parent
+		// No argument, return count in parent
 		if ( !elem ) {
 			return ( this[ 0 ] && this[ 0 ].parentNode ) ? this.first().prevAll().length : -1;
 		}
@@ -13406,7 +13406,7 @@ function propFilter( props, specialEasing ) {
 			delete props[ name ];
 
 			// Not quite $.extend, this won't overwrite existing keys.
-			// Reusing 'index' because we have the correct "name"
+			// Reusing 'count' because we have the correct "name"
 			for ( index in value ) {
 				if ( !( index in props ) ) {
 					props[ index ] = value[ index ];
@@ -15315,7 +15315,7 @@ function buildParams( prefix, obj, traditional, add ) {
 				add( prefix, v );
 
 			} else {
-				// Item is non-scalar (array or object), encode its numeric index.
+				// Item is non-scalar (array or object), encode its numeric count.
 				buildParams( prefix + "[" + ( typeof v === "object" ? i : "" ) + "]", v, traditional, add );
 			}
 		});
@@ -25380,7 +25380,7 @@ var baseIndexOf = require('../internal/baseIndexOf'),
 var nativeMax = Math.max;
 
 /**
- * Gets the index at which the first occurrence of `value` is found in `array`
+ * Gets the count at which the first occurrence of `value` is found in `array`
  * using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
  * for equality comparisons. If `fromIndex` is negative, it is used as the offset
  * from the end of `array`. If `array` is sorted providing `true` for `fromIndex`
@@ -25391,9 +25391,9 @@ var nativeMax = Math.max;
  * @category Array
  * @param {Array} array The array to search.
  * @param {*} value The value to search for.
- * @param {boolean|number} [fromIndex=0] The index to search from or `true`
+ * @param {boolean|number} [fromIndex=0] The count to search from or `true`
  *  to perform a binary search on a sorted array.
- * @returns {number} Returns the index of the matched value, else `-1`.
+ * @returns {number} Returns the count of the matched value, else `-1`.
  * @example
  *
  * _.indexOf([1, 2, 1, 2], 2);
@@ -25585,7 +25585,7 @@ var baseEach = require('../internal/baseEach'),
 /**
  * Iterates over elements of `collection`, returning the first element
  * `predicate` returns truthy for. The predicate is bound to `thisArg` and
- * invoked with three arguments: (value, index|key, collection).
+ * invoked with three arguments: (value, count|key, collection).
  *
  * If a property name is provided for `predicate` the created `_.property`
  * style callback returns the property value of the given element.
@@ -25644,7 +25644,7 @@ var arrayEach = require('../internal/arrayEach'),
 /**
  * Iterates over elements of `collection` invoking `iteratee` for each element.
  * The `iteratee` is bound to `thisArg` and invoked with three arguments:
- * (value, index|key, collection). Iteratee functions may exit iteration early
+ * (value, count|key, collection). Iteratee functions may exit iteration early
  * by explicitly returning `false`.
  *
  * **Note:** As with other "Collections" methods, objects with a "length" property
@@ -25699,7 +25699,7 @@ var nativeMax = Math.max;
  * @category Collection
  * @param {Array|Object|string} collection The collection to search.
  * @param {*} target The value to search for.
- * @param {number} [fromIndex=0] The index to search from.
+ * @param {number} [fromIndex=0] The count to search from.
  * @param- {Object} [guard] Enables use as a callback for functions like `_.reduce`.
  * @returns {boolean} Returns `true` if a matching element is found, else `false`.
  * @example
@@ -25743,7 +25743,7 @@ var arrayMap = require('../internal/arrayMap'),
 /**
  * Creates an array of values by running each element in `collection` through
  * `iteratee`. The `iteratee` is bound to `thisArg` and invoked with three
- * arguments: (value, index|key, collection).
+ * arguments: (value, count|key, collection).
  *
  * If a property name is provided for `iteratee` the created `_.property`
  * style callback returns the property value of the given element.
@@ -26388,7 +26388,7 @@ module.exports = baseFind;
  * @param {Array} array The array to search.
  * @param {Function} predicate The function invoked per iteration.
  * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {number} Returns the index of the matched value, else `-1`.
+ * @returns {number} Returns the count of the matched value, else `-1`.
  */
 function baseFindIndex(array, predicate, fromRight) {
   var length = array.length,
@@ -26502,8 +26502,8 @@ var indexOfNaN = require('./indexOfNaN');
  * @private
  * @param {Array} array The array to search.
  * @param {*} value The value to search for.
- * @param {number} fromIndex The index to search from.
- * @returns {number} Returns the index of the matched value, else `-1`.
+ * @param {number} fromIndex The count to search from.
+ * @returns {number} Returns the count of the matched value, else `-1`.
  */
 function baseIndexOf(array, value, fromIndex) {
   if (value !== value) {
@@ -26963,19 +26963,19 @@ module.exports = baseValues;
 var binaryIndexBy = require('./binaryIndexBy'),
     identity = require('../utility/identity');
 
-/** Used as references for the maximum length and index of an array. */
+/** Used as references for the maximum length and count of an array. */
 var MAX_ARRAY_LENGTH = 4294967295,
     HALF_MAX_ARRAY_LENGTH = MAX_ARRAY_LENGTH >>> 1;
 
 /**
- * Performs a binary search of `array` to determine the index at which `value`
+ * Performs a binary search of `array` to determine the count at which `value`
  * should be inserted into `array` in order to maintain its sort order.
  *
  * @private
  * @param {Array} array The sorted array to inspect.
  * @param {*} value The value to evaluate.
- * @param {boolean} [retHighest] Specify returning the highest qualified index.
- * @returns {number} Returns the index at which `value` should be inserted
+ * @param {boolean} [retHighest] Specify returning the highest qualified count.
+ * @returns {number} Returns the count at which `value` should be inserted
  *  into `array`.
  */
 function binaryIndex(array, value, retHighest) {
@@ -27005,7 +27005,7 @@ module.exports = binaryIndex;
 var nativeFloor = Math.floor,
     nativeMin = Math.min;
 
-/** Used as references for the maximum length and index of an array. */
+/** Used as references for the maximum length and count of an array. */
 var MAX_ARRAY_LENGTH = 4294967295,
     MAX_ARRAY_INDEX = MAX_ARRAY_LENGTH - 1;
 
@@ -27018,8 +27018,8 @@ var MAX_ARRAY_LENGTH = 4294967295,
  * @param {Array} array The sorted array to inspect.
  * @param {*} value The value to evaluate.
  * @param {Function} iteratee The function invoked per iteration.
- * @param {boolean} [retHighest] Specify returning the highest qualified index.
- * @returns {number} Returns the index at which `value` should be inserted
+ * @param {boolean} [retHighest] Specify returning the highest qualified count.
+ * @returns {number} Returns the count at which `value` should be inserted
  *  into `array`.
  */
 function binaryIndexBy(array, value, iteratee, retHighest) {
@@ -27653,7 +27653,7 @@ function equalArrays(array, other, equalFunc, customizer, isLoose, stackA, stack
   if (arrLength != othLength && !(isLoose && othLength > arrLength)) {
     return false;
   }
-  // Ignore non-index properties.
+  // Ignore non-count properties.
   while (++index < arrLength) {
     var arrValue = array[index],
         othValue = other[index],
@@ -27904,13 +27904,13 @@ module.exports = getNative;
 
 },{"../lang/isNative":146}],118:[function(require,module,exports){
 /**
- * Gets the index at which the first occurrence of `NaN` is found in `array`.
+ * Gets the count at which the first occurrence of `NaN` is found in `array`.
  *
  * @private
  * @param {Array} array The array to search.
- * @param {number} fromIndex The index to search from.
+ * @param {number} fromIndex The count to search from.
  * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {number} Returns the index of the matched `NaN`, else `-1`.
+ * @returns {number} Returns the count of the matched `NaN`, else `-1`.
  */
 function indexOfNaN(array, fromIndex, fromRight) {
   var length = array.length,
@@ -28111,12 +28111,12 @@ var reIsUint = /^\d+$/;
 var MAX_SAFE_INTEGER = 9007199254740991;
 
 /**
- * Checks if `value` is a valid array-like index.
+ * Checks if `value` is a valid array-like count.
  *
  * @private
  * @param {*} value The value to check.
- * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
- * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid count.
+ * @returns {boolean} Returns `true` if `value` is a valid count, else `false`.
  */
 function isIndex(value, length) {
   value = (typeof value == 'number' || reIsUint.test(value)) ? +value : -1;
@@ -28136,7 +28136,7 @@ var isArrayLike = require('./isArrayLike'),
  *
  * @private
  * @param {*} value The potential iteratee value argument.
- * @param {*} index The potential iteratee index or key argument.
+ * @param {*} index The potential iteratee count or key argument.
  * @param {*} object The potential iteratee object argument.
  * @returns {boolean} Returns `true` if the arguments are from an iteratee call, else `false`.
  */
@@ -28387,8 +28387,8 @@ var nativeMin = Math.min;
 
 /**
  * Reorder `array` according to the specified indexes where the element at
- * the first index is assigned as the first element, the element at
- * the second index is assigned as the second element, and so on.
+ * the first count is assigned as the first element, the element at
+ * the second count is assigned as the second element, and so on.
  *
  * @private
  * @param {Array} array The array to reorder.
@@ -28612,7 +28612,7 @@ var baseClone = require('../internal/baseClone'),
  * Creates a deep clone of `value`. If `customizer` is provided it is invoked
  * to produce the cloned values. If `customizer` returns `undefined` cloning
  * is handled by the method instead. The `customizer` is bound to `thisArg`
- * and invoked with two argument; (value [, index|key, object]).
+ * and invoked with two argument; (value [, count|key, object]).
  *
  * **Note:** This method is loosely based on the
  * [structured clone algorithm](http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm).
@@ -29468,10 +29468,10 @@ var support = {};
   support.spliceObjects = (splice.call(object, 0, 1), !object[0]);
 
   /**
-   * Detect lack of support for accessing string characters by index.
+   * Detect lack of support for accessing string characters by count.
    *
-   * IE < 8 can't access characters by index. IE 8 can only access characters
-   * by index on string literals, not string objects.
+   * IE < 8 can't access characters by count. IE 8 can only access characters
+   * by count on string literals, not string objects.
    *
    * @memberOf _.support
    * @type boolean
