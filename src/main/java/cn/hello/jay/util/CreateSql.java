@@ -16,23 +16,23 @@ public class CreateSql {
 
 
     public static void main(String[] args) throws Exception {
-//        String trustPlanNo = "AMC20200428";
-//        String startTime = "2020-04-28 00:00:00";
-//        String endTime = "2020-04-30 23:59:59";
-//        String trustPlanStartTime = "2020-05-20 00:00:00";
-//        String trustPlanEndTime = "2021-10-20 23:59:59";
+        String trustPlanNo = "AMC20200601";
+        String startTime = "2020-06-01 00:00:00";
+        String endTime = "2020-06-10 20:00:00";
+        String trustPlanStartTime = "2020-07-10 00:00:00";
+        String trustPlanEndTime = "2021-12-10 23:59:59";
 
-        String trustPlanNo = "TSX20200528";
-        String startTime = "2020-05-28 00:00:00";
-        String endTime = "2020-05-30 23:59:59";
-        String trustPlanStartTime = "2020-06-20 00:00:00";
-        String trustPlanEndTime = "2021-11-20 23:59:59";
+//        String trustPlanNo = "TSX20200528";
+//        String startTime = "2020-05-28 00:00:00";
+//        String endTime = "2020-05-30 23:59:59";
+//        String trustPlanStartTime = "2020-06-20 00:00:00";
+//        String trustPlanEndTime = "2021-11-20 23:59:59";
 
 
 
         String term = "18";
         String rate = "0.0225";
-        String repayDate = "20";
+        String repayDate = "10";
 
         BufferedReader br = new BufferedReader(new FileReader(new File(file)));
         String uid = br.readLine();
